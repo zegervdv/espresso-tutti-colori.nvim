@@ -7,7 +7,7 @@ function M.setup(config)
     bg = '#FBFAFC',
 
     cursor = '#dbebff',
-    cursorline = '#ffffff',
+    cursorline = '#f5f5f5',
 
     grey0 = '#a1a1a1',
     grey1 = '#222222',
