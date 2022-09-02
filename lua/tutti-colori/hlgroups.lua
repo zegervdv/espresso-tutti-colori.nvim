@@ -49,7 +49,7 @@ function M.setup(colors)
     -- CurSearch = {
     --   link = 'Search', --[[ IncSearch ]]
     -- },
-    -- IncSearch = { fg = colors.bg_visual, bg = colors.diag.warning },
+    IncSearch = { bg = colors.search },
     SpecialKey = { link = 'NonText' },
     -- SpellBad = { undercurl = true, sp = colors.diag.error },
     -- SpellCap = { undercurl = true, sp = colors.diag.warning },
