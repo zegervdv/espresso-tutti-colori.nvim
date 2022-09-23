@@ -59,9 +59,9 @@ function M.setup(colors)
     -- StatusLineNC = { fg = colors.fg_comment, bg = colors.bg_status },
     -- Winbar = { fg = colors.fg_dark, bg = 'NONE' },
     -- WinbarNC = { fg = colors.fg_dark, bg = config.dimInactive and colors.bg_dim or 'NONE' },
-    -- TabLine = { bg = colors.bg_dark, fg = colors.bg_light3 },
-    -- TabLineFill = { bg = colors.bg },
-    -- TabLineSel = { fg = colors.fg_dark, bg = colors.bg_light1 },
+    TabLine = { bg = colors.status, fg = colors.fg },
+    TabLineFill = { bg = colors.status },
+    TabLineSel = { fg = colors.fg, bg = colors.blue_bg },
     Title = { fg = colors.blue, bg = colors.blue_bg },
     Visual = { bg = colors.visual },
     VisualNOS = { link = 'Visual' },
@@ -362,6 +362,9 @@ function M.setup(colors)
     -- IndentBlanklineSpaceCharBlankline = { fg = colors.bg_light2 },
     -- IndentBlanklineContextChar = { fg = colors.bg_light3 },
     -- IndentBlanklineContextStart = { sp = colors.bg_light3, underline = true },
+
+    FidgetTitle = { bg = colors.bg, fg = colors.bold_blue },
+    FidgetTask = { bg = colors.bg, fg = colors.teal },
   }
   return hlgroups
 end
