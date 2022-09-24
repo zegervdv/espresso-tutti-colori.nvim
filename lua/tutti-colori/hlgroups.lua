@@ -281,46 +281,16 @@ function M.setup(colors)
     -- GitSignsDelete = { link = 'diffDeleted' },
     -- GitSignsDeleteLn = { bg = colors.diff.delete },
 
-    -- -- Telescope                      = {},
-    -- TelescopeBorder = { fg = colors.fg_border, bg = colors.bg },
-    -- TelescopeResultsClass = { link = 'TSType' },
-    -- TelescopeResultsStruct = { link = 'TSType' },
-    -- TelescopeResultsVariable = { link = 'TSVariable' },
+    TelescopeResultsClass = { link = 'TSType' },
+    TelescopeResultsStruct = { link = 'TSType' },
+    TelescopeResultsVariable = { link = 'TSVariable' },
 
-    -- -- NvimTree                       = {},
-    -- NvimTreeNormal = { link = 'Normal' },
-    -- NvimTreeNormalNC = { link = 'NormalNC' },
-    -- NvimTreeRootFolder = { fg = colors.id, bold = true },
-    -- NvimTreeGitDirty = { fg = colors.git.changed },
-    -- NvimTreeGitNew = { fg = colors.git.added },
-    -- NvimTreeGitDeleted = { fg = colors.git.removed },
-    -- NvimTreeSpecialFile = { fg = colors.sp },
-    -- -- NvimTreeIndentMarker           = {},
-    -- NvimTreeImageFile = { fg = colors.sp2 },
-    -- NvimTreeSymlink = { link = 'Type' },
-    -- NvimTreeFolderName = { link = 'Directory' },
-    -- NvimTreeExecFile = { fg = colors.springGreen, bold = true },
-    -- NvimTreeGitStaged = { fg = colors.git.added },
-    -- NvimTreeOpenedFile = { fg = colors.sp, italic = true },
-    -- NvimTreeWinSeparator = { link = 'WinSeparator' },
+    TelescopeTitle = { link = 'Title' },
+    TelescopeNormal = { bg = colors.cursorline },
+    TelescopeBorder = { bg = colors.cursorline },
 
-    -- -- Fern
-    -- -- FernBranchText = {},
-
-    -- -- glyph = {},
-    -- -- GlyphPalette1 = {},
-    -- -- GlyphPalette2 = {},
-    -- -- GlyphPalette3 = {},
-    -- -- GlyphPalette4 = {},
-    -- -- GlyphPalette6 = {},
-    -- -- GlyphPalette7 = {},
-    -- -- GlyphPalette9 = {},
-
-    -- -- Dashboard
-    -- DashboardShortCut = { fg = colors.sp },
-    -- DashboardHeader = { fg = colors.git.removed },
-    -- DashboardCenter = { fg = colors.id },
-    -- DashboardFooter = { fg = colors.fn },
+    TelescopePromptNormal = { bg = colors.bg },
+    TelescopePromptCounter = { link = 'Number' },
 
     -- -- WhichKey = {},
     -- -- WhichKeyGroup = {},
@@ -329,70 +299,6 @@ function M.setup(colors)
     -- -- WhichKeySeparator = {},
     -- -- WhichKeyFloat = {},
     -- -- WhichKeyValue = {},
-
-    -- -- LspSaga
-    -- -- DiagnosticWarning = {},
-    -- -- DiagnosticInformation = {},
-
-    -- -- LspFloatWinNormal = {},
-    -- -- LspFloatWinBorder = {},
-    -- -- LspSagaBorderTitle = {},
-    -- -- LspSagaHoverBorder = {},
-    -- -- LspSagaRenameBorder = {},
-    -- -- LspSagaDefPreviewBorder = {},
-    -- -- LspSagaCodeActionBorder = {},
-    -- -- LspSagaFinderSelection = {},
-    -- -- LspSagaCodeActionTitle = {},
-    -- -- LspSagaCodeActionContent = {},
-    -- -- LspSagaSignatureHelpBorder = {},
-    -- -- ReferencesCount = {},
-    -- -- DefinitionCount = {},
-    -- -- DefinitionIcon = {},
-    -- -- ReferencesIcon = {},
-    -- -- TargetWord = {},
-
-    -- -- Floaterm
-    -- FloatermBorder = { fg = colors.fg_border, bg = colors.bg },
-
-    -- -- NeoVim                         = {},
-    -- healthError = { fg = colors.diag.error },
-    -- healthSuccess = { fg = colors.springGreen },
-    -- healthWarning = { fg = colors.diag.warning },
-
-    -- -- BufferLine
-    -- -- BufferLineIndicatorSelected = {},
-    -- -- BufferLineFill = {},
-
-    -- -- Barbar = {},
-    -- -- BufferCurrent = {},
-    -- -- BufferCurrentIndex = {},
-    -- -- BufferCurrentMod = {},
-    -- -- BufferCurrentSign = {},
-    -- -- BufferCurrentTarget = {},
-    -- -- BufferVisible = {},
-    -- -- BufferVisibleIndex = {},
-    -- -- BufferVisibleMod = {},
-    -- -- BufferVisibleSign = {},
-    -- -- BufferVisibleTarget = {},
-    -- -- BufferInactive = {},
-    -- -- BufferInactiveIndex = {},
-    -- -- BufferInactiveMod = {},
-    -- -- BufferInactiveSign = {},
-    -- -- BufferInactiveTarget = {},
-    -- -- BufferTabpages = {},
-    -- -- BufferTabpage = {},
-
-    -- -- Sneak
-    -- -- Sneak = {},
-    -- -- SneakScope = {},
-
-    -- -- Hop
-    -- -- HopNextKey = {},
-    -- -- HopNextKey1 = {},
-    -- -- HopNextKey2 = {},
-    -- -- HopUnmatched = {},
-
-    -- -- LightspeedGreyWash = {},
 
     -- -- Cmp
     -- CmpDocumentation = { link = 'NormalFloat' },
