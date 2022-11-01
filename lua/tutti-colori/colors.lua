@@ -6,7 +6,7 @@ function M.setup(config)
     fg = '#000000',
     bg = '#FBFAFC',
 
-    cursor = '#dbebff',
+    cursor = '#facbcb',
     cursorline = '#f5f5f5',
 
     grey0 = '#a1a1a1',
