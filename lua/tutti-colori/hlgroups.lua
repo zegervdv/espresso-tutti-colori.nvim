@@ -365,6 +365,8 @@ function M.setup(colors)
 
     FidgetTitle = { bg = colors.bg, fg = colors.bold_blue },
     FidgetTask = { bg = colors.bg, fg = colors.teal },
+
+    DiffviewSecondary = { fg = colors.green },
   }
   return hlgroups
 end
