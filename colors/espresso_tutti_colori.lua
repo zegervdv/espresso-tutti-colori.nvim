@@ -49,7 +49,6 @@ NOTE: If you are on a Unix-based system (or have WSL on Windows) you can use the
 	   See the README for more details.
 ]]
 
-
 --[[ Step 2: Information
 In this step you will define information that helps Neovim process:
 
@@ -58,7 +57,7 @@ In this step you will define information that helps Neovim process:
 ]]
 
 -- This is the name of your colorscheme which will be used as per |g:colors_name|.
-local colorscheme_name = 'highlite'
+local colorscheme_name = 'espresso_tutti_colori'
 
 -- WARN: users shouldn't touch this.
 vim.api.nvim_set_var('colors_name', colorscheme_name)
@@ -87,40 +86,48 @@ emulator. Type errors in the definition will show up as LSP diagnostics.
 NOTE: |Replace-mode| will probably be useful here.
 ]]
 
-local black       = {'#202020', 235, 'black'} --- @type highlite.color.definition
-local gray        = {'#808080', 244, 'gray'} --- @type highlite.color.definition
-local gray_dark   = {'#353535', 236, 'darkgrey'} --- @type highlite.color.definition
-local gray_darker = {'#505050', 239, 'gray'} --- @type highlite.color.definition
-local gray_light  = {'#c0c0c0', 250, 'gray'} --- @type highlite.color.definition
+local black = { '#000000', 235, 'black' } --- @type highlite.color.definition
+local gray = { '#a1a1a1', 244, 'gray' } --- @type highlite.color.definition
+local gray_dark = { '#888888', 236, 'darkgrey' } --- @type highlite.color.definition
+local gray_darker = { '#222222', 239, 'gray' } --- @type highlite.color.definition
+local gray_light = { '#f5f5f5', 250, 'gray' } --- @type highlite.color.definition
+local gray_lighter = { '#facbcb', 250, 'gray' } --- @type highlite.color.definition
+local line = { '#d1d1d1', 250, 'gray' } --- @type highlite.color.definition
 local white       = {'#ffffff', 231, 'white'} --- @type highlite.color.definition
+local white_soft = { '#fbfafc', 231, 'white' } --- @type highlite.color.definition
+local white_blue = { '#fefeff', 231, 'white' } --- @type highlite.color.definition
+local blue_gray = { '#667788', 200, 'gray' } --- @type highlite.color.definition
 
-local tan = {'#f4c069', 221, 'yellow'} --- @type highlite.color.definition
+local tan = { '#fbe9ad', 221, 'yellow' } --- @type highlite.color.definition
 
-local red       = {'#ee4a59', 203, 'red'} --- @type highlite.color.definition
-local red_dark  = {'#a80000', 124, 'darkred'} --- @type highlite.color.definition
-local red_light = {'#ff4090', 205, 'red'} --- @type highlite.color.definition
+local red = { '#d44950', 203, 'red' } --- @type highlite.color.definition
+local red_dark = { '#d71707', 124, 'darkred' } --- @type highlite.color.definition
+local red_light = { '#cf4f5f', 205, 'red' } --- @type highlite.color.definition
+local error_red = { '#f93232', 124, 'darkred' } --- @type highlite.color.definition
+local error_bg = { '#facbcb', 203, 'red' }
 
-local orange       = {'#ff8900', 208, 'darkyellow'} --- @type highlite.color.definition
-local orange_light = {'#f0af00', 214, 'darkyellow'} --- @type highlite.color.definition
+local orange = { '#e9a700', 208, 'darkyellow' } --- @type highlite.color.definition
+local orange_light = { '#faf1da', 214, 'darkyellow' } --- @type highlite.color.definition
 
-local yellow = {'#f0df33', 227, 'yellow'} --- @type highlite.color.definition
+local yellow = { '#fbe9ad', 227, 'yellow' } --- @type highlite.color.definition
 
-local green_dark  = {'#70d533', 113, 'darkgreen'} --- @type highlite.color.definition
-local green       = {'#22ff22', 46,  'green'} --- @type highlite.color.definition
-local green_light = {'#99ff99', 120, 'green'} --- @type highlite.color.definition
-local turqoise    = {'#2bff99', 48,  'green'} --- @type highlite.color.definition
+local green_dark = { '#7b8c4d', 113, 'darkgreen' } --- @type highlite.color.definition
+local green = { '#73b00a', 46, 'green' } --- @type highlite.color.definition
+local green_light = { '#e8ffd5', 120, 'green' } --- @type highlite.color.definition
 
-local blue = {'#7766ff', 63,  'darkblue'} --- @type highlite.color.definition
-local cyan = {'#33dbc3', 80,  'cyan'} --- @type highlite.color.definition
-local ice  = {'#95c5ff', 111, 'cyan'} --- @type highlite.color.definition
-local teal = {'#60afff', 75,  'blue'} --- @type highlite.color.definition
+local blue = { '#2f6f9f', 63, 'darkblue' } --- @type highlite.color.definition
+local cyan = { '#0b51a6', 80, 'cyan' } --- @type highlite.color.definition
+local ice_light = { '#f4faff', 111, 'cyan' } --- @type highlite.color.definition
+local teal = { '#4f9fcf', 75, 'blue' } --- @type highlite.color.definition
+local blue_light = { '#4f9eeb', 75, 'blue' } --- @type highlite.color.definition
+local ice = { '#81c7ff', 111, 'cyan' } --- @type highlite.color.definition
+local sky = { '#d4e9fa', 11, 'blue' } --- @type highlite.color.definition
+local soft_blue = { '#dbebff', 11, 'blue' } --- @type highlite.color.definition
 
-local magenta      = {'#d5508f', 168, 'magenta'} --- @type highlite.color.definition
-local magenta_dark = {'#bb0099', 126, 'darkmagenta'} --- @type highlite.color.definition
-local pink         = {'#ffa6ff', 219, 'magenta'} --- @type highlite.color.definition
-local pink_light   = {'#ffb7b7', 217, 'white'} --- @type highlite.color.definition
-local purple       = {'#cf55f0', 171, 'magenta'} --- @type highlite.color.definition
-local purple_light = {'#af60af', 133, 'darkmagenta'} --- @type highlite.color.definition
+local purple = { '#4e279a', 171, 'magenta' } --- @type highlite.color.definition
+local purple_light = { '#7653c1', 133, 'darkmagenta' } --- @type highlite.color.definition
+local purple_dark = { '#3a1d72', 171, 'darkmagenta' } --- @type highlite.color.definition
+local purple_lighter = { '#f3f2ff', 171, 'magenta' } --- @type highlite.color.definition
 
 --[[ Step 4: highlights
 You can define highlight groups like this:
@@ -253,44 +260,44 @@ colorscheme.highlight_all {
 	-- Basic styles
 	Bold = {bold = true},
 	Italic = {italic = true},
-	Normal = {fg = gray_light},
+	Normal = {fg = black, bg = white_soft},
 	Title = 'Bold',
-	Underlined = {fg = turqoise, underline = true},
+	Underlined = {fg = purple_light, underline = true},
 	Whitespace = 'NonText',
 
 	-- "Non"-text
 	Conceal = 'NonText',
 	EndOfBuffer = 'NonText',
 	Ignore = {fg = gray},
-	NonText = {fg = gray_darker},
+	NonText = {fg = white_blue},
 
 	-- Literals
-	Constant = {fg = orange_light},
-	String = {fg = green_dark},
-	Character = {fg = red_light},
-	Number = {fg = pink_light},
-	Boolean = {fg = yellow},
+	Constant = {fg = purple_light, bg = purple_lighter},
+	String = {fg = green},
+	Character = 'String',
+	Number = {fg = purple_light, bg = purple_lighter},
+	Boolean = 'Constant',
 	Float = 'Number',
 
 	-- Syntax
 	Comment = {fg = gray, italic = true},
-	Conditional = {fg = ice, italic = true},
+	Conditional = {fg = purple_light, bold = true},
 	Debug = 'WarningMsg',
-	Delimiter = {fg = white},
+	Delimiter = { fg= cyan, bg = ice_light },
 	Exception = {fg = red_light, bold = true},
-	Function = {fg = purple},
-	Identifier = function(self) return {fg = self.Normal.fg} end,
-	Keyword = {fg = teal},
-	Label = {fg = pink, bold = true},
+	Function = {fg = red_dark},
+	Identifier = {fg = gray_darker},
+	Keyword = {fg = blue, bg = ice_light},
+	Label = {fg = purple_light, bold = true},
 	Noise = 'Delimiter',
-	Operator = {fg = green, bold = true},
-	Repeat = {fg = turqoise, italic = true},
-	Statement = {fg = ice},
+	Operator = {fg = blue, bg = ice_light, bold = true},
+	Repeat = {fg = teal, italic = true},
+	Statement = {fg = blue, bg = ice_light},
 	StorageClass = {fg = orange_light, bold = true},
 	Structure = {fg = blue, bold = true},
 	Tag = 'Underlined',
-	Type = {fg = cyan},
-	Typedef = {fg = cyan, italic = true},
+	Type = {fg = red},
+	Typedef = {fg = red, bold = true},
 
 	-- Pre-processor
 	Define = {fg = blue, nocombine = true},
@@ -300,8 +307,8 @@ colorscheme.highlight_all {
 	PreProc = {fg = tan},
 
 	-- Special
-	Special = {fg = magenta, bold = true},
-	SpecialChar = {fg = red_light, italic = true},
+	Special = {fg = blue, bg=ice_light, bold = true},
+	SpecialChar = {fg = red_light },
 	SpecialComment = {fg = gray, bold = true, nocombine = true},
 	SpecialKey = 'Character',
 
@@ -345,37 +352,37 @@ colorscheme.highlight_all {
 	TabLineSel = function(self) return {fg = self.TabLine.fg, bg = self.Normal.bg} end,
 
 	-- Line Highlighting
-	CursorLine = {bg = gray_dark},
-	CursorLineNr = function(self) return {fg = pink, bg = self.LineNr.bg} end,
-	LineNr = {fg = gray},
+	CursorLine = {bg = gray_light},
+	CursorLineNr = {fg=blue},
+	LineNr = {fg = line},
 	QuickFixLine = function(self) return {bg = self.StatusLine.bg} end,
-	Visual = {reverse = true},
+	Visual = {bg=soft_blue},
 	VisualNOS = {bg = gray_darker},
 
 	-- Popups
 	FloatBorder = {fg = gray},
-	Pmenu = function(self) return {fg = self.Normal.fg, bg = gray_dark} end,
-	PmenuSbar = {bg = gray_darker},
-	PmenuSel = {fg = black, bg = gray_light},
+	Pmenu = { bg=ice_light },
+	PmenuSbar = 'Pmenu',
+	PmenuSel = {fg = white_soft, bg = blue_light},
 	PmenuThumb = {bg = white},
 	WildMenu = 'PmenuSel',
 
 	-- Folds
 	FoldColumn = {bg = gray_darker, bold = true},
-	Folded = {fg = black, bg = purple_light, italic = true},
+	Folded = {fg = purple_light, bg = purple_lighter, italic = true},
 
 	-- Diffs
-	DiffAdd = {fg = black, bg = green_dark},
+	DiffAdd = {fg = black, bg = green_light},
 	diffAdded = 'DiffAdd',
-	DiffChange = {},
-	DiffDelete = function(self) return {fg = self.DiffAdd.fg, bg = red} end,
-	DiffText = function(self) return {fg = self.DiffAdd.fg, bg = yellow} end,
+	DiffChange = { fg = white_soft, bg = ice },
+	DiffDelete = {fg = white_soft, bg = error_red},
+	DiffText = {fg = white_soft, bg = ice},
 	diffRemoved = 'DiffDelete',
 
 	-- Searching
-	IncSearch = {reverse = true},
-	MatchParen = {fg = green, bold = true, underline = true},
-	Search = {sp = white, underline = true},
+	IncSearch = { bg = yellow },
+	MatchParen = { bg = sky, bold = true, underline = true},
+	Search = {bg = yellow, sp = black, underline = true},
 
 	-- Spelling
 	SpellBad = {sp = red, undercurl = true},
@@ -384,26 +391,26 @@ colorscheme.highlight_all {
 	SpellRare = {sp = orange, undercurl = true},
 
 	-- Conditional Column Highlighting
-	ColorColumn = {reverse = true},
+	ColorColumn = {},
 	SignColumn = {},
 
 	-- Messages
 	Error = {fg = white, bg = red_dark, bold = true},
-	ErrorMsg = {fg = red, bold = true},
+	ErrorMsg = {fg = red_dark, bold = true},
 	ModeMsg = {fg = yellow},
 	Question = {fg = orange_light, underline = true},
-	Todo = {fg = black, bg = cyan, bold = true},
+	Todo = {fg = black, bg = green_light, bold = true},
 	WarningMsg = {fg = orange, bold = true},
 
 	-- Diagnostics
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
 
-	DiagnosticError = 'Error',
-	DiagnosticFloatingError = 'ErrorMsg',
+	DiagnosticError = {fg = error_red, bg=error_bg, bold = true},
+	DiagnosticFloatingError = 'DiagnosticError',
 	DiagnosticSignError = 'DiagnosticFloatingError',
 
-	DiagnosticWarn = {fg = black, bg = orange, bold = true},
+	DiagnosticWarn = {fg = orange, bg = orange_light, bold = true},
 	DiagnosticFloatingWarn = 'WarningMsg',
 	DiagnosticSignWarn = 'DiagnosticFloatingWarn',
 
@@ -421,13 +428,14 @@ colorscheme.highlight_all {
 	DiagnosticUnderlineWarn = {sp = orange, undercurl = true},
 
 	-- Cursor
-	Cursor = {reverse = true},
+	Cursor = {bg=gray_lighter},
 	CursorIM = 'Cursor',
 	CursorColumn = {bg = gray_dark},
 
 	-- Misc
-	Directory = {fg = ice, bold = true},
-	VertSplit = {fg = white},
+	Directory = {fg = purple, bold = true},
+  WinSeparator = {fg = line},
+	VertSplit = 'WinSeparator',
 
 	--[[ Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -664,7 +672,7 @@ colorscheme.highlight_all {
 	['@lsp.type.function.lua'] = {},
 	['@lsp.type.keyword.lua'] = 'SpecialComment',
 	['@lsp.typemod.function.declaration.lua'] = '@lsp.type.function',
-	['@lsp.typemod.variable.defaultLibrary.lua'] = '@lsp.type.class.lua',
+	['@lsp.typemod.variable.defaultLibrary.lua'] = {fg = red_light, bold=true},
 	['@lsp.typemod.variable.definition.lua'] = '@punctuation',
 	luaBraces = 'Structure',
 	luaBrackets = 'Delimiter',
@@ -975,11 +983,7 @@ colorscheme.highlight_all {
 	GitSignsDelete = 'GitGutterDelete',
 
 	-- indent-blankline.nvim
-	IndentBlanklineChar = function(self)
-		local definition = vim.deepcopy(self.Whitespace)
-		definition.nocombine = true
-		return definition
-	end,
+	IndentBlanklineChar = {fg=gray_light},
 	IndentBlanklineSpaceChar = 'IndentBlanklineChar',
 
 	-- lazy.nvim
