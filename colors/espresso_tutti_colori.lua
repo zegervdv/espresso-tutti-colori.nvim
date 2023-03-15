@@ -97,6 +97,7 @@ local white       = {'#ffffff', 231, 'white'} --- @type highlite.color.definitio
 local white_soft = { '#fbfafc', 231, 'white' } --- @type highlite.color.definition
 local white_blue = { '#fefeff', 231, 'white' } --- @type highlite.color.definition
 local blue_gray = { '#667788', 200, 'gray' } --- @type highlite.color.definition
+local gray_blue = {'#e3ebf1', 100, 'gray'}
 
 local tan = { '#fbe9ad', 221, 'yellow' } --- @type highlite.color.definition
 
@@ -301,8 +302,8 @@ colorscheme.highlight_all {
 
 	-- Pre-processor
 	Define = {fg = blue, nocombine = true},
-	Include = {fg = green_light, nocombine = true},
-	Macro = {fg = blue, italic = true},
+	Include = {fg = cyan, bg=ice_light, nocombine = true},
+	Macro = {fg = black, bg=green_light, italic = true},
 	PreCondit = {fg = tan, italic = true},
 	PreProc = {fg = tan},
 
@@ -323,6 +324,7 @@ colorscheme.highlight_all {
 	['@lsp.type.number'] = '@number',
 	['@lsp.type.operator'] = '@operator',
 	['@lsp.type.string'] = '@string',
+  ['@lsp.type.property'] = '@field',
 
 	-- treesitter
 	['@constant.builtin'] = '@constant',
@@ -331,12 +333,15 @@ colorscheme.highlight_all {
 	['@function.builtin'] = '@function',
 	['@function.macro'] = '@macro',
 	['@namespace'] = 'Directory',
+  ['@string.special'] = { fg = black, bg = green_light, bold = true },
 	['@string.escape'] = '@string.special',
 	['@tag'] = 'Tag',
 	['@text.danger'] = 'ErrorMsg',
 	['@text.literal'] = 'mkdCode',
 	['@text.uri'] = 'Underlined',
 	['@text.warning'] = 'WarningMsg',
+  ['@field'] = { fg = purple_dark },
+  ['@variable.builtin'] = { fg = teal },
 
 	--[[ Editor UI ]]
 
@@ -347,9 +352,9 @@ colorscheme.highlight_all {
 	StatusLineTermNC = 'StatusLineNC',
 
 	-- Tabline
-	TabLine = function(self) return {fg = self.Normal.fg, bg = self.StatusLine.bg} end,
-	TabLineFill = function(self) return {fg = self.TabLine.bg, bg = black} end,
-	TabLineSel = function(self) return {fg = self.TabLine.fg, bg = self.Normal.bg} end,
+	TabLine = { fg=black, bg = gray_blue},
+	TabLineFill = { bg = gray_blue },
+	TabLineSel = { fg = black, bg = ice },
 
 	-- Line Highlighting
 	CursorLine = {bg = gray_light},
@@ -397,7 +402,7 @@ colorscheme.highlight_all {
 	-- Messages
 	Error = {fg = white, bg = red_dark, bold = true},
 	ErrorMsg = {fg = red_dark, bold = true},
-	ModeMsg = {fg = yellow},
+	ModeMsg = {fg = black},
 	Question = {fg = orange_light, underline = true},
 	Todo = {fg = black, bg = green_light, bold = true},
 	WarningMsg = {fg = orange, bold = true},
@@ -408,23 +413,23 @@ colorscheme.highlight_all {
 
 	DiagnosticError = {fg = error_red, bg=error_bg, bold = true},
 	DiagnosticFloatingError = 'DiagnosticError',
-	DiagnosticSignError = 'DiagnosticFloatingError',
+	DiagnosticSignError = {fg = error_red},
 
 	DiagnosticWarn = {fg = orange, bg = orange_light, bold = true},
 	DiagnosticFloatingWarn = 'WarningMsg',
-	DiagnosticSignWarn = 'DiagnosticFloatingWarn',
+	DiagnosticSignWarn = {fg = orange},
 
-	DiagnosticHint = {fg = black, bg = magenta, bold = true},
-	DiagnosticFloatingHint = {fg = magenta, italic = true},
-	DiagnosticSignHint = 'DiagnosticFloatingHint',
+	DiagnosticHint = {fg = black, bg = purple_dark, bold = true},
+	DiagnosticFloatingHint = {fg = purple_dark, italic = true},
+	DiagnosticSignHint = { fg = purple },
 
-	DiagnosticInfo = {fg = black, bg = pink_light, bold = true},
-	DiagnosticFloatingInfo = {fg = pink_light, italic = true},
-	DiagnosticSignInfo = 'DiagnosticFloatingInfo',
+	DiagnosticInfo = {fg = black, bg = ice_light, bold = true},
+	DiagnosticFloatingInfo = {fg = ice, italic = true},
+	DiagnosticSignInfo = {fg = ice},
 
 	DiagnosticUnderlineError = {sp = red, undercurl = true},
-	DiagnosticUnderlineHint = {sp = magenta, undercurl = true},
-	DiagnosticUnderlineInfo = {sp = pink_light, undercurl = true},
+	DiagnosticUnderlineHint = {sp = purple, undercurl = true},
+	DiagnosticUnderlineInfo = {sp = ice , undercurl = true},
 	DiagnosticUnderlineWarn = {sp = orange, undercurl = true},
 
 	-- Cursor
@@ -1003,7 +1008,7 @@ colorscheme.highlight_all {
 	LazyReasonPlugin = 'Label',
 	LazyReasonSource = 'Include',
 	LazyReasonStart = 'Constant',
-	LazySpecial = 'Special',
+	LazySpecial = function(self) return {fg = self.Special.fg, nocombine = true} end,
 	LazyTaskOutput = 'Statement',
 	LazyUrl = 'Underlined',
 
