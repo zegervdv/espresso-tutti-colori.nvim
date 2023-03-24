@@ -305,7 +305,7 @@ colorscheme.highlight_all {
 	Include = {fg = cyan, bg=ice_light, nocombine = true},
 	Macro = {fg = black, bg=green_light, italic = true},
 	PreCondit = {fg = tan, italic = true},
-	PreProc = {fg = tan},
+	PreProc = {fg = purple_light, bg = purple_lighter},
 
 	-- Special
 	Special = {fg = blue, bg=ice_light, bold = true},
@@ -1143,6 +1143,9 @@ colorscheme.highlight_all {
 	SignifySignChange = 'GitGutterChange',
 	SignifySignDelete = 'GitGutterDelete',
 	SignifySignChangeDelete = 'GitGutterChangeDelete',
+
+  -- diffview
+  DiffviewSecondary = { fg = green },
 }
 
 --[[ Step 5: Terminal Colors
