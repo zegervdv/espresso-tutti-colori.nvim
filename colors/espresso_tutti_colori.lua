@@ -988,7 +988,7 @@ colorscheme.highlight_all {
 	GitSignsDelete = 'GitGutterDelete',
 
 	-- indent-blankline.nvim
-	IndentBlanklineChar = {fg=gray_light},
+	IndentBlanklineChar = {fg=gray_blue},
 	IndentBlanklineSpaceChar = 'IndentBlanklineChar',
 
 	-- lazy.nvim
