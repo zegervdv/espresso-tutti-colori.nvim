@@ -374,7 +374,7 @@ colorscheme.highlight_all {
 	WildMenu = 'PmenuSel',
 
 	-- Folds
-	FoldColumn = {bg = gray_darker, bold = true},
+	FoldColumn = {fg = blue_gray, bold = true},
 	Folded = {fg = purple_light, bg = purple_lighter, italic = true},
 
 	-- Diffs
