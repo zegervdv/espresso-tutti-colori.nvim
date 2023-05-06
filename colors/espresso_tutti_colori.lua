@@ -95,6 +95,7 @@ local gray_lighter = { '#facbcb', 250, 'gray' } --- @type highlite.color.definit
 local line = { '#d1d1d1', 250, 'gray' } --- @type highlite.color.definition
 local white       = {'#ffffff', 231, 'white'} --- @type highlite.color.definition
 local white_soft = { '#fbfafc', 231, 'white' } --- @type highlite.color.definition
+local white_softer = { '#f3f3f3', 231, 'white' } --- @type highlite.color.definition
 local white_blue = { '#fefeff', 231, 'white' } --- @type highlite.color.definition
 local blue_gray = { '#667788', 200, 'gray' } --- @type highlite.color.definition
 local gray_blue = {'#e3ebf1', 100, 'gray'}
@@ -732,7 +733,7 @@ colorscheme.highlight_all {
 	markdownUrl = 'mkdURL',
 	mkdBold = 'Ignore',
 	mkdBoldItalic = 'mkdBold',
-	mkdCode = 'Statement',
+	mkdCode = {},
 	mkdCodeDelimiter = 'mkdBold',
 	mkdCodeEnd = 'mkdCodeStart',
 	mkdCodeStart = 'mkdCodeDelimiter',
@@ -1146,6 +1147,9 @@ colorscheme.highlight_all {
 
   -- diffview
   DiffviewSecondary = { fg = green },
+
+  -- Markdown CodeBlocks
+  MDCodeBlock = { bg = white_softer }
 }
 
 --[[ Step 5: Terminal Colors
